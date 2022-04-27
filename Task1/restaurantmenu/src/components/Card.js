@@ -7,7 +7,23 @@ const Card = (props) => {
           chNumber(selectedAmount-1)
       }
   }
-      return ( 
+  const order=()=>{
+      chNumber(0)    
+      if(selectedAmount!== 0){
+        let neme=props.name;
+        const newItem={
+            name:neme,
+            amount:selectedAmount
+        } 
+        let newBill=props.price*selectedAmount
+        console.log(newBill)
+        props.addItem([...props.item,newItem])
+        props.changeBill((props.bill)+newBill)
+        console.log(props.bill)
+    }
+  }
+      
+  return ( 
     <div className="Card">
       <img src={props.img}></img>
       <h1>{props.name}</h1>
@@ -15,6 +31,7 @@ const Card = (props) => {
       <button onClick={()=>decrease()}>-</button>
         <p>{selectedAmount}</p>
       <button onClick={()=>chNumber(selectedAmount+1)}>+</button>
+      <button onClick={()=>order()}>Order</button>
     </div> 
     );
 }
