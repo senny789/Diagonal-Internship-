@@ -16,9 +16,9 @@ const List = (props) => {
         
     }
     return ( 
-        <div>
-            <h1> {props.name} x {props.amount} : {itemPrice}</h1>
-            <button onClick={del}> Cancel </button>
+        <div className="List">
+            <ul> <li>{props.name} x {props.amount} : {itemPrice} <button onClick={del}>CANCEL</button></li></ul>
+            
             
         </div>
      );

@@ -28,10 +28,13 @@ const Card = (props) => {
       <img src={props.img}></img>
       <h1>{props.name}</h1>
       <p>Price:{props.price}</p>
-      <button onClick={()=>decrease()}>-</button>
+      <div className="Card-buttons">
+        <button onClick={()=>decrease()} className="decrease">-</button>
         <p>{selectedAmount}</p>
-      <button onClick={()=>chNumber(selectedAmount+1)}>+</button>
+        <button onClick={()=>chNumber(selectedAmount+1)} className="increase">+</button>
+      </div>
       <button onClick={()=>order()}>Order</button>
+      
     </div> 
     );
 }
