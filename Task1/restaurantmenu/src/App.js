@@ -25,7 +25,9 @@ function App() {
     // localStorage.getItem("History")?
     //  localStorage.setItem("History",{localStorage.getItem ("History")},JSON.stringify(items)}):
      localStorage.setItem("History",JSON.stringify(items))
+     chHistory(items)
   }
+  
   const [history,chHistory]=useState(JSON.parse(localStorage.getItem("History")) || '')
   let History=history.map(hist=>{
     return <div className='history-element'><ul> <li>{hist.name} x {hist.amount} </li></ul></div>
@@ -39,7 +41,7 @@ function App() {
     document.querySelector('.history').style.display="block"
    }
   }
-  console.log(JSON.parse(localStorage.getItem("History")))
+  
   return (
     <div className="App">
       <div className='Header'>
